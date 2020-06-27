@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Date;
 
-//@FeignClient(name="TicketDelivery", url="http://TicketDelivery:8080")
-@FeignClient(name="TicketDelivery", url="http://localhost:8083")
+@FeignClient(name="TicketDelivery", url="http://TicketDelivery:8080")
+//@FeignClient(name="TicketDelivery", url="http://localhost:8083")
 public interface DeliveryCancelationService {
 
     @RequestMapping(method= RequestMethod.POST, path="/deliveryCancelations")
