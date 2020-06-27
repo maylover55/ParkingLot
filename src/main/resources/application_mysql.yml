@@ -55,6 +55,18 @@ parkinglot:
 
 spring:
   profiles: docker
+  jpa:
+    hibernate:
+      ddl-auto: create
+    generate-ddl: false
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/parkinglot?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 4
   cloud:
     stream:
       kafka:
