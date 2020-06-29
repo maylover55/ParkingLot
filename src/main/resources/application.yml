@@ -30,15 +30,12 @@ spring:
         event-out:
           destination: parkingTicket
           contentType: application/json
-
 logging:
   level:
     org.hibernate.type: trace
     org.springframework.cloud: debug
 server:
   port: 8082
-parkinglot:
-  maxfordailyparking: 4
 
 ---
 
@@ -65,6 +62,3 @@ spring:
         event-out:
           destination: parkingTicket
           contentType: application/json
-
-parkinglot:
-  maxfordailyparking: 4
