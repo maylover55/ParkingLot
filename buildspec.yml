@@ -82,6 +82,12 @@ phases:
                           configMapKeyRef:
                             name: parking
                             key: maxparking
+                    env:
+                      - name: maxparking
+                        valueFrom:
+                          configMapKeyRef:
+                            name:parking
+                            key: maxparking
                     readinessProbe:
                       httpGet:
                         path: /actuator/health
