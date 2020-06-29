@@ -39,7 +39,7 @@ public class PolicyHandler{
             List<ParkingLot> searchParkingLots = parkingLotRepo.findByReservationDateAndStatus(searchDate, searchStatus);
 
             // 일일 주차권 발급 최대 가능 건수를 환경변수에서 추출
-            String max =  env.getProperty("maxparking");
+            String max =  env.getProperty("maxp");
             System.out.println("##### max parking : " + max);
             System.out.println("##### searchParkingLots size : " + searchParkingLots.size());
 
