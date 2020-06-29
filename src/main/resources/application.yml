@@ -36,6 +36,7 @@ logging:
     org.springframework.cloud: debug
 server:
   port: 8082
+maxp: ${maxparking}
 
 ---
 
