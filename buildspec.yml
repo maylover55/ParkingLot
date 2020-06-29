@@ -77,16 +77,10 @@ phases:
                     ports:
                       - containerPort: 8080
                     env:
-                      - name: $_PROJECT_NAME
-                        valueFrom:
-                          configMapKeyRef:
-                            name: parking
-                            key: maxparking
-                    env:
                       - name: maxparking
                         valueFrom:
                           configMapKeyRef:
-                            name:parking
+                            name: parking
                             key: maxparking
                     readinessProbe:
                       httpGet:
