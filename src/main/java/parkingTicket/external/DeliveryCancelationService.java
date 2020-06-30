@@ -15,4 +15,6 @@ public interface DeliveryCancelationService {
     @RequestMapping(method= RequestMethod.POST, path="/deliveryCancelations")
     public void cancel(@RequestBody TicketDelivery ticketDelivery);
 
+    @RequestMapping(method= RequestMethod.GET, path="/deliveryCancelations")
+    public void syncCall();
 }
