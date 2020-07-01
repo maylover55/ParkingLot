@@ -22,7 +22,7 @@ public class ParkingLot {
     public void onPostPersist(){
         System.out.println("##### ParkingLot onPostPersist start : ");
 
-        // 일일 주차권 발급 최대 가능 건수를 초과한 경우
+        // 일일 주차권 발급 최대 가능 공간 수를 초과한 경우
         //if(this.getStatus().equals("ParkingLot fully Occupied")) {
         if(this.getStatus().equals(StatusType.FullyOccupied)) {
             FullyOccupied fullyOccupied = new FullyOccupied();
