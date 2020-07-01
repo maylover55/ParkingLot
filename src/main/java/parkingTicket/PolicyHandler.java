@@ -32,18 +32,18 @@ public class PolicyHandler{
             parkingLot.setTicketReservationId(ticketReserved.getId());
             parkingLot.setReservationDate(ticketReserved.getReservationDate());
 
-            // 일일 주차권 신규 요청의 예약일자 기준, 이미 예약된 주차 공간 건수를 조회
+            // 일일 주차권 신규 요청의 예약일자 기준, 이미 예약된 주차 공간 수를 조회
             Date searchDate = ticketReserved.getReservationDate();
             //String searchStatus = "ParkingLot Occupied";
             String searchStatus = StatusType.Occupied;
             List<ParkingLot> searchParkingLots = parkingLotRepo.findByReservationDateAndStatus(searchDate, searchStatus);
 
-            // 일일 주차권 발급 최대 가능 건수를 환경변수에서 추출
+            // 일일 주차권 발급 최대 가능 공간 수를 환경변수에서 추출
             String max =  env.getProperty("maxparking");
             System.out.println("##### max parking : " + max);
             System.out.println("##### searchParkingLots size : " + searchParkingLots.size());
 
-            // 일일 주차권 발급 최대 가능 건수를 초과한 경우
+            // 일일 주차권 발급 최대 가능 공간 수를 초과한 경우
             if(searchParkingLots.size() >= Long.valueOf(max)) {
                 //parkingLot.setStatus("ParkingLot fully Occupied");
                 parkingLot.setStatus(StatusType.FullyOccupied);
