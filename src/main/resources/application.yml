@@ -58,7 +58,7 @@ spring:
     generate-ddl: false
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
   datasource:
-    url: ${url}/parkinglot?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    url: ${url}
     username: ${username}
     password: ${password}
     driver-class-name: com.mysql.cj.jdbc.Driver
