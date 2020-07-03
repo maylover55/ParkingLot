@@ -8,7 +8,18 @@ spring:
     properties:
       hibernate:
         show_sql: true
-        format_sql: true
+        format_sql: true  
+    hibernate:
+      ddl-auto: update
+    generate-ddl: false
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  datasource:
+    url: ${url}/parkinglot?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: ${username}
+    password: ${password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 4
   cloud:
     stream:
       kafka:
@@ -41,6 +52,18 @@ server:
 
 spring:
   profiles: docker
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: false
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  datasource:
+    url: ${url}/parkinglot?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: ${username}
+    password: ${password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 4  
   cloud:
     stream:
       kafka:
