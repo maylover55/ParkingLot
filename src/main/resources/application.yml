@@ -54,7 +54,7 @@ spring:
   profiles: docker
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     generate-ddl: false
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
   datasource:
